@@ -1,13 +1,13 @@
 const CONFIG = {
-    BOT_TOKEN: "8355674438:AAHeX0scFb1aaLplYxUE3cUSeCTh8VB_PUc",       // O'zgarishsiz qolishi mumkin
-    CHAT_ID: "6457425447",           // O'zgarishsiz qolishi mumkin
-    ADMIN_PASSWORD: "0777",   
-    OWNER_NAME: "Shahriyor",                 // <--- Shuni "Shahriyor" qiling
-    OWNER_ROLE: "Frontend Developer",       
-    OWNER_EMAIL: "shakxriyarr@gmail.com",    // <--- O'z emailingizni yozing
-    OWNER_TELEGRAM: "@shaxriiyor",           // <--- O'z telegramingizni yozing
-    OWNER_GITHUB: "github.com/shakxriyar",    // <--- GitHub manzilingiz
-    OWNER_INITIALS: "SH",                   // <--- "SH" qilib o'zgartiring
+    BOT_TOKEN: "8355674438:AAHeX0scFb1aaLplYxUE3cUSeCTh8VB_PUc",       // @BotFather dan olingan token
+    CHAT_ID: "6457425447",           // @userinfobot dan olingan ID
+    ADMIN_PASSWORD: "admin_parolingiz",   // Admin panel paroli (xohlagan parolingizni yozing)
+    OWNER_NAME: "Shahriyor",                 // Sizning ismingiz
+    OWNER_ROLE: "Frontend Developer & Bot Creator",       // Lavozimingiz
+    OWNER_EMAIL: "shakxriyarr@gmail.com",      // Emailingiz
+    OWNER_TELEGRAM: "@shaxriiyor",            // Telegramingiz
+    OWNER_GITHUB: "github.com/shaxriiyor",    // GitHubingiz
+    OWNER_INITIALS: "SH",                   // Initsiallaringiz
   };
 
   // LocalStorage kaliti
@@ -43,15 +43,16 @@ ${data.message}
     return res.ok;
   }
 
-function showToast(msg, type = "success") {
+  function showToast(msg, type = "success") {
     const t = document.getElementById("toast");
     t.textContent = (type === "success" ? "✓ " : "✗ ") + msg;
     t.className = `toast ${type}`;
     t.style.display = "flex";
     setTimeout(() => t.style.display = "none", 4000);
   }
+
    // CONFIG dan ma'lumotlarni sahifaga qo'yish
- document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('nav-name').textContent = CONFIG.OWNER_NAME.toLowerCase().replace(' ', '');
     document.getElementById('hero-name').textContent = CONFIG.OWNER_NAME + '.';
     document.getElementById('about-name').textContent = CONFIG.OWNER_NAME;
@@ -62,6 +63,7 @@ function showToast(msg, type = "success") {
     document.getElementById('c-github').textContent = CONFIG.OWNER_GITHUB;
     document.getElementById('f-name-owner').textContent = CONFIG.OWNER_NAME;
   });
+
   // Forma yuborish
   document.getElementById('contactForm').addEventListener('submit', async (e) => {
     e.preventDefault();
