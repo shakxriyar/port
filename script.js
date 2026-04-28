@@ -1,14 +1,13 @@
-
-  const CONFIG = {
-    BOT_TOKEN: "YOUR_BOT_TOKEN_HERE",       // @BotFather dan olingan token
-    CHAT_ID: "YOUR_CHAT_ID_HERE",           // @userinfobot dan olingan ID
-    ADMIN_PASSWORD: "your_password_here",   // Admin panel paroli
-    OWNER_NAME: "Ismingiz",                 // Sizning ismingiz
-    OWNER_ROLE: "Frontend Developer",       // Lavozimingiz
-    OWNER_EMAIL: "yourname@gmail.com",      // Emailingiz
-    OWNER_TELEGRAM: "@yourname",            // Telegramingiz
-    OWNER_GITHUB: "github.com/yourname",    // GitHubingiz
-    OWNER_INITIALS: "YA",                   // Initsiallaringiz
+const CONFIG = {
+    BOT_TOKEN: "YOUR_BOT_TOKEN_HERE",       // O'zgarishsiz qolishi mumkin
+    CHAT_ID: "YOUR_CHAT_ID_HERE",           // O'zgarishsiz qolishi mumkin
+    ADMIN_PASSWORD: "your_password_here",   
+    OWNER_NAME: "Shahriyor",                 // <--- Shuni "Shahriyor" qiling
+    OWNER_ROLE: "Frontend Developer",       
+    OWNER_EMAIL: "shakxriyarr@gmail.com",    // <--- O'z emailingizni yozing
+    OWNER_TELEGRAM: "@shaxriiyor",           // <--- O'z telegramingizni yozing
+    OWNER_GITHUB: "github.com/shahriyor",    // <--- GitHub manzilingiz
+    OWNER_INITIALS: "SH",                   // <--- "SH" qilib o'zgartiring
   };
 
   // LocalStorage kaliti
@@ -45,17 +44,12 @@ ${data.message}
   }
 
   function showToast(msg, type = "success") {
-    const t = document.getElementById("toast");
-    t.textContent = (type === "success" ? "✓ " : "✗ ") + msg;
-    t.className = `toast ${type}`;
-    t.style.display = "flex";
-    setTimeout(() => t.style.display = "none", 4000);
-  }
-   // CONFIG dan ma'lumotlarni sahifaga qo'yish
   document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('nav-name').textContent = CONFIG.OWNER_NAME.toLowerCase().replace(' ', '');
     document.getElementById('hero-name').textContent = CONFIG.OWNER_NAME + '.';
     document.getElementById('about-name').textContent = CONFIG.OWNER_NAME;
+    // ... va hokazo
+  });
     document.getElementById('about-initials').textContent = CONFIG.OWNER_INITIALS;
     document.getElementById('about-email').textContent = CONFIG.OWNER_EMAIL;
     document.getElementById('c-email').textContent = CONFIG.OWNER_EMAIL;
