@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>shahriyor</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<!-- ⚙️ SOZLASH — faqat shu qismni o'zgartiring -->
+
+
+<div id="toast" class="toast"></div>
+
+<nav>
+  <div class="nav-logo">// <span id="nav-name">shahrir</span>.</div>
+  <ul class="nav-links">
+    <li><a href="#about">haqimda</a></li>
+    <li><a href="#skills">ko'nikmalar</a></li>
+    <li><a href="#projects">loyihalar</a></li>
+    <li><a href="#experience">tajriba</a></li>
+    <li><a href="#contact">aloqa</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-grid"></div>
+  <div class="hero-orb1"></div>
+  <div class="hero-orb2"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Mavjud — Yangi loyihalarga ochiqman</div>
+    <h1 class="hero-name">
+      <span class="line1">Salom, men</span>
+      <span class="line2" id="hero-name">shahriyor</span>
+    </h1>
+    <p class="hero-desc">Foydalanuvchilar uchun ajoyib interfeys va tajribalar yaratuvchi Frontend Developer. Zamonaviy texnologiyalar bilan kelajak uchun qurayapman.</p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn-primary">Loyihalarni ko'rish →</a>
+      <a href="#contact" class="btn-outline">Bog'lanish</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-num">3+</div><div class="stat-label">Yil tajriba</div></div>
+      <div><div class="stat-num">20+</div><div class="stat-label">Yakunlangan loyiha</div></div>
+      <div><div class="stat-num">15+</div><div class="stat-label">Mamnun mijoz</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-grid fade-up">
+    <div>
+      <div class="about-card">
+        <div class="about-avatar" id="about-initials">YA</div>
+        <h3 id="about-name">shahriyor</h3>
+        <p class="role">// frontend.developer</p>
+        <p>Men foydalanuvchi tajribasini birinchi o'ringa qo'yadigan, toza va performant kod yozadigan dasturchi.</p>
+        <div class="about-tags">
+          <span class="tag">React</span><span class="tag">Next.js</span>
+          <span class="tag">TypeScript</span><span class="tag">UI/UX</span>
+        </div>
+      </div>
+    </div>
+    <div class="about-text">
+      <div class="section-label">// 001 — haqimda</div>
+      <h2 class="section-title">Men kimman?</h2>
+      <p>Men Toshkentda yashovchi, 3 yillik tajribaga ega Frontend dasturchiman. Dizaynni haqiqiy hayotga aylantirish, murakkab muammolarga elegant yechimlar topish — bu mening ishtiyoqim.</p>
+      <p>Zamonaviy web texnologiyalari, performans optimizatsiyasi va foydalanuvchi tajribasiga alohida e'tibor beraman.</p>
+      <div class="info-grid">
+        <div class="info-item"><div class="label">Joylashuv</div><div class="value">Toshkent, O'zbekiston</div></div>
+        <div class="info-item"><div class="label">Holat</div><div class="value" style="color:var(--neon)">Mavjud ✓</div></div>
+        <div class="info-item"><div class="label">Tajriba</div><div class="value">3+ yil</div></div>
+        <div class="info-item"><div class="label">Email</div><div class="value" id="about-email">email@gmail.com</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label fade-up">// 002 — ko'nikmalar</div>
+  <h2 class="section-title fade-up">Texnik arsenal</h2>
+  <p class="section-subtitle fade-up">Zamonaviy web texnologiyalari bilan ishlashda keng tajribam bor.</p>
+  <div class="skills-grid">
+    <div class="skill-card fade-up">
+      <div class="skill-icon">⚛️</div>
+      <div class="skill-name">React / Next.js</div>
+      <div class="skill-desc">Komponentga asoslangan arxitektura, SSR, SSG, React Query, Zustand bilan murakkab ilovalar.</div>
+      <div class="skill-bar-wrap"><div class="skill-bar" data-width="92%"></div></div>
+      <div class="skill-level">92%</div>
+      <div class="skill-techs"><span class="tech-pill">React 18</span><span class="tech-pill">Next.js 14</span><span class="tech-pill">React Query</span></div>
+    </div>
+    <div class="skill-card fade-up">
+      <div class="skill-icon">🎨</div>
+      <div class="skill-name">CSS / Styling</div>
+      <div class="skill-desc">Tailwind CSS, CSS Modules, Styled Components, animatsiyalar va responsive dizayn.</div>
+      <div class="skill-bar-wrap"><div class="skill-bar" data-width="95%"></div></div>
+      <div class="skill-level">95%</div>
+      <div class="skill-techs"><span class="tech-pill">Tailwind</span><span class="tech-pill">SASS</span><span class="tech-pill">Framer Motion</span></div>
+    </div>
+    <div class="skill-card fade-up">
+      <div class="skill-icon">📘</div>
+      <div class="skill-name">TypeScript</div>
+      <div class="skill-desc">Tip xavfsizligi, generiklar, utility types va katta loyihalar uchun mustahkam arxitektura.</div>
+      <div class="skill-bar-wrap"><div class="skill-bar" data-width="85%"></div></div>
+      <div class="skill-level">85%</div>
+      <div class="skill-techs"><span class="tech-pill">TS 5.x</span><span class="tech-pill">Zod</span><span class="tech-pill">tRPC</span></div>
+    </div>
+    <div class="skill-card fade-up">
+      <div class="skill-icon">🔧</div>
+      <div class="skill-name">Tooling & Build</div>
+      <div class="skill-desc">Vite, Webpack, CI/CD, Git workflow, testing va deploy jarayonlarini avtomatlashtirish.</div>
+      <div class="skill-bar-wrap"><div class="skill-bar" data-width="80%"></div></div>
+      <div class="skill-level">80%</div>
+      <div class="skill-techs"><span class="tech-pill">Vite</span><span class="tech-pill">Vitest</span><span class="tech-pill">GitHub Actions</span></div>
+    </div>
+    <div class="skill-card fade-up">
+      <div class="skill-icon">📱</div>
+      <div class="skill-name">Mobile / PWA</div>
+      <div class="skill-desc">React Native va PWA texnologiyalari bilan cross-platform ilovalar yaratish tajribasi.</div>
+      <div class="skill-bar-wrap"><div class="skill-bar" data-width="75%"></div></div>
+      <div class="skill-level">75%</div>
+      <div class="skill-techs"><span class="tech-pill">React Native</span><span class="tech-pill">Expo</span><span class="tech-pill">PWA</span></div>
+    </div>
+    <div class="skill-card fade-up">
+      <div class="skill-icon">🔌</div>
+      <div class="skill-name">API & Backend</div>
+      <div class="skill-desc">REST API, GraphQL, WebSocket integratsiyalari va Node.js bilan BFF arxitekturasi.</div>
+      <div class="skill-bar-wrap"><div class="skill-bar" data-width="70%"></div></div>
+      <div class="skill-level">70%</div>
+      <div class="skill-techs"><span class="tech-pill">GraphQL</span><span class="tech-pill">REST</span><span class="tech-pill">Node.js</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" style="background:var(--bg2)">
+  <div class="section-label fade-up">// 003 — loyihalar</div>
+  <h2 class="section-title fade-up">Tanlangan ishlar</h2>
+  <p class="section-subtitle fade-up">Real muammolarni hal qilish uchun yaratilgan loyihalar.</p>
+  <div class="projects-grid">
+    <div class="project-card fade-up">
+      <div class="project-img p1">
+        <span class="project-number">01 —</span>
+        <div class="project-mockup">
+          <div class="mockup-bar"><div class="mockup-dot" style="background:#ff5f57"></div><div class="mockup-dot" style="background:#febc2e"></div><div class="mockup-dot" style="background:#28c840"></div></div>
+          <div class="mockup-body"><div class="mockup-line" style="width:60%;background:rgba(0,245,212,0.2)"></div><div class="mockup-line" style="width:90%"></div><div class="mockup-line" style="width:75%"></div></div>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="project-type">E-Commerce Platform</div>
+        <h3 class="project-title">ShopNext — Online Do'kon</h3>
+        <p class="project-desc">Next.js 14 va Stripe asosida qurilgan to'liq funksional e-commerce platforma.</p>
+        <div class="project-stack"><span class="stack-tag">Next.js</span><span class="stack-tag">TypeScript</span><span class="stack-tag">Stripe</span></div>
+        <div class="project-links"><a href="#" class="project-link">↗ Demo</a><a href="#" class="project-link">⌥ GitHub</a></div>
+      </div>
+    </div>
+    <div class="project-card fade-up">
+      <div class="project-img p2">
+        <span class="project-number">02 —</span>
+        <div class="project-mockup">
+          <div class="mockup-bar"><div class="mockup-dot" style="background:#ff5f57"></div><div class="mockup-dot" style="background:#febc2e"></div><div class="mockup-dot" style="background:#28c840"></div></div>
+          <div class="mockup-body"><div class="mockup-line" style="width:40%;background:rgba(0,245,212,0.2)"></div><div class="mockup-line" style="width:100%"></div><div class="mockup-line" style="width:65%"></div></div>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="project-type">Dashboard / Analytics</div>
+        <h3 class="project-title">DataViz — Analytics Dashboard</h3>
+        <p class="project-desc">Real-time ma'lumotlarni vizualizatsiya qiluvchi dashboard. WebSocket va D3.js.</p>
+        <div class="project-stack"><span class="stack-tag">React</span><span class="stack-tag">D3.js</span><span class="stack-tag">WebSocket</span></div>
+        <div class="project-links"><a href="#" class="project-link">↗ Demo</a><a href="#" class="project-link">⌥ GitHub</a></div>
+      </div>
+    </div>
+    <div class="project-card fade-up">
+      <div class="project-img p3">
+        <span class="project-number">03 —</span>
+        <div class="project-mockup">
+          <div class="mockup-bar"><div class="mockup-dot" style="background:#ff5f57"></div><div class="mockup-dot" style="background:#febc2e"></div><div class="mockup-dot" style="background:#28c840"></div></div>
+          <div class="mockup-body"><div class="mockup-line" style="width:70%;background:rgba(247,37,133,0.2)"></div><div class="mockup-line" style="width:55%"></div><div class="mockup-line" style="width:90%"></div></div>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="project-type">Mobile App / PWA</div>
+        <h3 class="project-title">TaskFlow — Vazifa Menejeri</h3>
+        <p class="project-desc">Drag & drop, offline rejim va real-time sinxronizatsiya bilan PWA ilova.</p>
+        <div class="project-stack"><span class="stack-tag">React</span><span class="stack-tag">PWA</span><span class="stack-tag">Tailwind</span></div>
+        <div class="project-links"><a href="#" class="project-link">↗ Demo</a><a href="#" class="project-link">⌥ GitHub</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="exp" id="experience">
+  <div class="section-label fade-up">// 004 — tajriba</div>
+  <h2 class="section-title fade-up">Ish tarixi</h2>
+  <div class="timeline fade-up">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">2022 — Hozirgi vaqt</div>
+      <div class="timeline-role">Senior Frontend Developer</div>
+      <div class="timeline-company">TechCorp Solutions · To'liq ish vaqti</div>
+      <div class="timeline-desc">React va Next.js asosida katta korporativ loyihalar yaratish. Sayt tezligini 40% ga yaxshiladim.</div>
+      <div class="timeline-techs"><span class="tech-pill">Next.js</span><span class="tech-pill">TypeScript</span><span class="tech-pill">AWS</span></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot" style="background:var(--neon2)"></div>
+      <div class="timeline-date">2021 — 2022</div>
+      <div class="timeline-role">Frontend Developer</div>
+      <div class="timeline-company">StartupLab · To'liq ish vaqti</div>
+      <div class="timeline-desc">Startap mahsulotlarining frontend qismini noldan qurdim. Agile metodologiyasi.</div>
+      <div class="timeline-techs"><span class="tech-pill">React</span><span class="tech-pill">Redux</span><span class="tech-pill">REST API</span></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot" style="background:var(--neon3)"></div>
+      <div class="timeline-date">2020 — 2021</div>
+      <div class="timeline-role">Junior Frontend Developer</div>
+      <div class="timeline-company">WebAgency · Freelance</div>
+      <div class="timeline-desc">Turli mijozlar uchun responsive saytlar va web ilovalar yaratish.</div>
+      <div class="timeline-techs"><span class="tech-pill">HTML/CSS</span><span class="tech-pill">JavaScript</span><span class="tech-pill">Vue.js</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-label fade-up">// 005 — aloqa</div>
+  <h2 class="section-title fade-up">Keling, suhbatlashaylik</h2>
+  <p class="section-subtitle fade-up">Yangi loyiha, hamkorlik yoki shunchaki salom — har qanday xabarga ochiqman.</p>
+  <div class="contact-grid fade-up">
+    <form class="contact-form" id="contactForm">
+      <div class="form-group">
+        <label class="form-label">Ismingiz *</label>
+        <input type="text" class="form-input" id="f-name" placeholder="John Doe" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email *</label>
+        <input type="email" class="form-input" id="f-email" placeholder="john@example.com" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Telefon raqam</label>
+        <input type="tel" class="form-input" id="f-phone" placeholder="+998 90 123 45 67">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Mavzu *</label>
+        <input type="text" class="form-input" id="f-subject" placeholder="Loyiha haqida..." required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Xabar *</label>
+        <textarea class="form-input" id="f-message" placeholder="Loyiha tafsilotlari..." required></textarea>
+      </div>
+      <button type="submit" class="btn-primary" id="submitBtn">Xabar yuborish →</button>
+    </form>
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="contact-icon">📧</div>
+        <div><div class="contact-item-label">Email</div><div class="contact-item-val" id="c-email">shakxriyarr@gmail.com</div></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">💬</div>
+        <div><div class="contact-item-label">Telegram</div><div class="contact-item-val" id="c-telegram">@shaxriiyor</div></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">⌨️</div>
+        <div><div class="contact-item-label">GitHub</div><div class="contact-item-val" id="c-github">github.com/yourname</div></div>
+      </div>
+      <div class="contact-item" style="background:rgba(0,245,212,0.04);border-color:rgba(0,245,212,0.15)">
+        <div class="contact-icon" style="background:rgba(0,245,212,0.12)">🔒</div>
+        <div>
+          <div class="contact-item-label">Admin panel</div>
+          <div class="contact-item-val"><a href="admin.html" style="color:var(--neon);text-decoration:none">admin.html →</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-left">© 2024 <span id="f-name-owner">Ismingiz</span> — Barcha huquqlar himoyalangan</div>
+  <div class="footer-right">
+    Muhabbat va kod bilan yaratildi ♥
+    <a href="admin.html">Admin</a>
+  </div>
+</footer>
+
+<script src="./script.js">
+ 
+</script>
+</body>
+</html>
