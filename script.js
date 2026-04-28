@@ -43,13 +43,18 @@ ${data.message}
     return res.ok;
   }
 
-  function showToast(msg, type = "success") {
-  document.addEventListener('DOMContentLoaded', () => {
+function showToast(msg, type = "success") {
+    const t = document.getElementById("toast");
+    t.textContent = (type === "success" ? "✓ " : "✗ ") + msg;
+    t.className = `toast ${type}`;
+    t.style.display = "flex";
+    setTimeout(() => t.style.display = "none", 4000);
+  }
+   // CONFIG dan ma'lumotlarni sahifaga qo'yish
+ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('nav-name').textContent = CONFIG.OWNER_NAME.toLowerCase().replace(' ', '');
     document.getElementById('hero-name').textContent = CONFIG.OWNER_NAME + '.';
     document.getElementById('about-name').textContent = CONFIG.OWNER_NAME;
-    // ... va hokazo
-  });
     document.getElementById('about-initials').textContent = CONFIG.OWNER_INITIALS;
     document.getElementById('about-email').textContent = CONFIG.OWNER_EMAIL;
     document.getElementById('c-email').textContent = CONFIG.OWNER_EMAIL;
@@ -57,7 +62,6 @@ ${data.message}
     document.getElementById('c-github').textContent = CONFIG.OWNER_GITHUB;
     document.getElementById('f-name-owner').textContent = CONFIG.OWNER_NAME;
   });
-
   // Forma yuborish
   document.getElementById('contactForm').addEventListener('submit', async (e) => {
     e.preventDefault();
