@@ -1,12 +1,12 @@
 const CONFIG = {
-    BOT_TOKEN: "YOUR_BOT_TOKEN_HERE",       // O'zgarishsiz qolishi mumkin
-    CHAT_ID: "YOUR_CHAT_ID_HERE",           // O'zgarishsiz qolishi mumkin
-    ADMIN_PASSWORD: "your_password_here",   
+    BOT_TOKEN: "8355674438:AAHeX0scFb1aaLplYxUE3cUSeCTh8VB_PUc",       // O'zgarishsiz qolishi mumkin
+    CHAT_ID: "6457425447",           // O'zgarishsiz qolishi mumkin
+    ADMIN_PASSWORD: "0777",   
     OWNER_NAME: "Shahriyor",                 // <--- Shuni "Shahriyor" qiling
     OWNER_ROLE: "Frontend Developer",       
     OWNER_EMAIL: "shakxriyarr@gmail.com",    // <--- O'z emailingizni yozing
     OWNER_TELEGRAM: "@shaxriiyor",           // <--- O'z telegramingizni yozing
-    OWNER_GITHUB: "github.com/shahriyor",    // <--- GitHub manzilingiz
+    OWNER_GITHUB: "github.com/shakxriyar",    // <--- GitHub manzilingiz
     OWNER_INITIALS: "SH",                   // <--- "SH" qilib o'zgartiring
   };
 
