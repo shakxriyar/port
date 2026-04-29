@@ -19,53 +19,31 @@ const CONFIG = {
     localStorage.setItem(MESSAGES_KEY, JSON.stringify(messages));
   }
 
-  async function sendToTelegram(data) {
-    const text = `
-🔔 *Yangi xabar — Portfolio*
 
-👤 *Ism:* ${data.name}
-📧 *Email:* ${data.email}
-📱 *Telefon:* ${data.phone}
-📝 *Mavzu:* ${data.subject}
+  // Firebase SDK ulanishi (Modular CDN)
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
-💬 *Xabar:*
-${data.message}
+// Sening Firebase konfigiratsiyang
+const firebaseConfig = {
+  apiKey: "AIzaSyDJVrSYuWF5Xgj2hoRSil-IaR9lYknBHM0",
+  authDomain: "portfolio-2c967.firebaseapp.com",
+  databaseURL: "https://portfolio-2c967-default-rtdb.firebaseio.com",
+  projectId: "portfolio-2c967",
+  storageBucket: "portfolio-2c967.firebasestorage.app",
+  messagingSenderId: "205928792319",
+  appId: "1:205928792319:web:6f570dc374276bb25dccca",
+  measurementId: "G-JVVVRJGKF0"
+};
 
-🕐 ${new Date().toLocaleString('uz-UZ')}
-    `.trim();
+// Firebase-ni ishga tushirish
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
 
-    const url = `https://api.telegram.org/bot${CONFIG.BOT_TOKEN}/sendMessage`;
-    const res = await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ chat_id: CONFIG.CHAT_ID, text, parse_mode: "Markdown" })
-    });
-    return res.ok;
-  }
-
-  function showToast(msg, type = "success") {
-    const t = document.getElementById("toast");
-    t.textContent = (type === "success" ? "✓ " : "✗ ") + msg;
-    t.className = `toast ${type}`;
-    t.style.display = "flex";
-    setTimeout(() => t.style.display = "none", 4000);
-  }
-
-   // CONFIG dan ma'lumotlarni sahifaga qo'yish
-  document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('nav-name').textContent = CONFIG.OWNER_NAME.toLowerCase().replace(' ', '');
-    document.getElementById('hero-name').textContent = CONFIG.OWNER_NAME + '.';
-    document.getElementById('about-name').textContent = CONFIG.OWNER_NAME;
-    document.getElementById('about-initials').textContent = CONFIG.OWNER_INITIALS;
-    document.getElementById('about-email').textContent = CONFIG.OWNER_EMAIL;
-    document.getElementById('c-email').textContent = CONFIG.OWNER_EMAIL;
-    document.getElementById('c-telegram').textContent = CONFIG.OWNER_TELEGRAM;
-    document.getElementById('c-github').textContent = CONFIG.OWNER_GITHUB;
-    document.getElementById('f-name-owner').textContent = CONFIG.OWNER_NAME;
-  });
-
-  // Forma yuborish
-  document.getElementById('contactForm').addEventListener('submit', async (e) => {
+// Kontakt formasi logikasi
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = document.getElementById('submitBtn');
     btn.textContent = 'Yuborilmoqda...';
@@ -78,37 +56,79 @@ ${data.message}
       phone: document.getElementById('f-phone').value || 'Kiritilmagan',
       subject: document.getElementById('f-subject').value,
       message: document.getElementById('f-message').value,
+      date: new Date().toISOString(),
+      read: false
     };
 
-    // LocalStoragega saqlash
-    saveMessage(data);
-
-    // Telegramga yuborish
     try {
-      const ok = await sendToTelegram(data);
-      if (ok) {
-        showToast("Xabar muvaffaqiyatli yuborildi! 🎉");
-        document.getElementById('contactForm').reset();
-      } else {
-        showToast("Yuborildi. Xabar saqlandi.", "error");
-      }
+      // 1. Firebase Realtime Database'ga saqlash
+      const messagesRef = ref(db, 'messages');
+      const newMessageRef = push(messagesRef);
+      await set(newMessageRef, { ...data, id: newMessageRef.key });
+
+      // 2. Telegram'ga yuborish (Sening avvalgi funksiyang)
+      await sendToTelegram(data);
+
+      showToast("Xabar muvaffaqiyatli yuborildi! 🎉");
+      contactForm.reset();
     } catch (err) {
-      showToast("Tarmoq xatosi. Xabar saqlandi.", "error");
+      console.error(err);
+      showToast("Xatolik yuz berdi. Iltimos qaytadan urining.", "error");
     }
 
     btn.textContent = 'Xabar yuborish →';
     btn.classList.remove('btn-sending');
     btn.disabled = false;
   });
+}
 
-  // Scroll animatsiyalar
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        const bar = e.target.querySelector('.skill-bar');
-        if (bar) bar.style.width = bar.dataset.width;
-      }
+// Telegram funksiyasi
+async function sendToTelegram(data) {
+  const BOT_TOKEN = "8355674438:AAHeX0scFb1aaLplYxUE3cUSeCTh8VB_PUc";
+  const CHAT_ID = "6457425447";
+  const text = `
+🔔 *Yangi xabar — Portfolio*
+
+👤 *Ism:* ${data.name}
+📧 *Email:* ${data.email}
+📞 *Tel:* ${data.phone}
+📝 *Mavzu:* ${data.subject}
+💬 *Xabar:* ${data.message}
+  `;
+
+  try {
+    const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        chat_id: CHAT_ID,
+        text: text,
+        parse_mode: 'Markdown'
+      })
     });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    return response.ok;
+  } catch (error) {
+    return false;
+  }
+}
+
+// Toast funksiyasi
+function showToast(msg, type = 'success') {
+  const t = document.getElementById('toast');
+  if (!t) return;
+  t.textContent = (type === 'success' ? '✓ ' : '✕ ') + msg;
+  t.className = `toast ${type}`;
+  t.style.display = 'flex';
+  setTimeout(() => t.style.display = 'none', 3500);
+}
+
+// Scroll animatsiyalari (Fade-up)
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
